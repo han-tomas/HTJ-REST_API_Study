@@ -33,7 +33,7 @@ public class ErrorSerializer extends JsonSerializer<Errors> {
         try{
             gen.writeStartObject();
             gen.writeStringField("objectName", e.getObjectName());
-            gen.writeStringField("coe", e.getCode());
+            gen.writeStringField("code", e.getCode());
             gen.writeStringField("defailMessage", e.getDefaultMessage());
             gen.writeEndObject();
         } catch (IOException ex) {
