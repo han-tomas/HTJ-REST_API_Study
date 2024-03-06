@@ -1,6 +1,7 @@
 package me.hantomas.restapi.events;
 
 import lombok.*;
+import me.hantomas.restapi.accounts.Account;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -25,6 +26,8 @@ public class Event {
     private boolean free;
     @Enumerated(EnumType.STRING)
     private EventStatus eventStatus = EventStatus.DRAFT;
+    @ManyToOne
+    private Account manager;
 
     public void update(){
         // Update free
